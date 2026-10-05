@@ -55,8 +55,8 @@ export default function UsageChart({ tenantId }) {
       {
         label: 'Successful (200)',
         data: successData,
-        backgroundColor: 'rgba(99, 102, 241, 0.7)',
-        borderColor: '#6366f1',
+        backgroundColor: 'rgba(85, 184, 220, 0.52)',
+        borderColor: '#55b8dc',
         borderWidth: 1,
         borderRadius: 4,
         borderSkipped: false

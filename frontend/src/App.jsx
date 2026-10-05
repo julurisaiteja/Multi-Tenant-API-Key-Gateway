@@ -6,7 +6,7 @@ import {
 import KeyList from './components/KeyList'
 import AuditLog from './components/AuditLog'
 import UsageChart from './components/UsageChart'
-import { tenantsApi } from './api'
+import { tenantsApi, DEMO_MODE } from './api'
 
 // ── Toast System ──────────────────────────────────────────────────────────
 function ToastContainer({ toasts }) {
@@ -62,11 +62,11 @@ function DashboardStats({ tenantId }) {
         <div className="stat-change">All time</div>
       </div>
       <div className="stat-card">
-        <div className="stat-label">Security Status</div>
+        <div className="stat-label">{DEMO_MODE ? 'Environment' : 'Security Status'}</div>
         <div className="stat-value" style={{ color: 'var(--success)', fontSize: '1.2rem', marginTop: 10 }}>
-          🔒 Secured
+          {DEMO_MODE ? 'Demo Preview' : '🔒 Secured'}
         </div>
-        <div className="stat-change positive">SHA-256 Hashed</div>
+        <div className="stat-change positive">{DEMO_MODE ? 'Sample keys only' : 'SHA-256 Hashed'}</div>
       </div>
     </div>
   )
@@ -145,6 +145,12 @@ export default function App() {
 
       {/* ── Main Content ─────────────────────────────────────────── */}
       <main className="main-content">
+        {DEMO_MODE && (
+          <div className="demo-banner" role="status">
+            <strong>Demo data</strong>
+            <span>Keys, usage, and audit activity are simulated in this browser and are not production credentials.</span>
+          </div>
+        )}
         {activeTab === 'dashboard' && (
           <>
             <div className="page-header">

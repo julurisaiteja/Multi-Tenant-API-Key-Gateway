@@ -9,24 +9,24 @@
 }
 
 :root {
-  --bg-primary: #0a0b0e;
-  --bg-secondary: #111318;
-  --bg-card: #161b27;
-  --bg-card-hover: #1c2336;
-  --bg-input: #1a1f2e;
+  --bg-primary: #0b1113;
+  --bg-secondary: #111c1e;
+  --bg-card: #172426;
+  --bg-card-hover: #1c3032;
+  --bg-input: #141f21;
 
-  --border: #2a3244;
-  --border-light: #323b52;
-  --border-glow: rgba(99, 102, 241, 0.4);
+  --border: #2a3c3d;
+  --border-light: #344a4b;
+  --border-glow: rgba(198, 216, 79, 0.4);
 
   --text-primary: #f1f5f9;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
 
-  --accent: #6366f1;
-  --accent-hover: #818cf8;
-  --accent-glow: rgba(99, 102, 241, 0.15);
-  --accent-subtle: rgba(99, 102, 241, 0.08);
+  --accent: #c6d84f;
+  --accent-hover: #d9e96e;
+  --accent-glow: rgba(198, 216, 79, 0.2);
+  --accent-subtle: rgba(198, 216, 79, 0.1);
 
   --success: #22c55e;
   --success-bg: rgba(34, 197, 94, 0.1);
@@ -35,8 +35,8 @@
   --danger: #ef4444;
   --danger-bg: rgba(239, 68, 68, 0.1);
   --danger-hover: #dc2626;
-  --info: #38bdf8;
-  --info-bg: rgba(56, 189, 248, 0.1);
+  --info: #55b8dc;
+  --info-bg: rgba(85, 184, 220, 0.1);
 
   --radius: 12px;
   --radius-sm: 8px;
@@ -44,7 +44,7 @@
 
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 48px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 0 1px var(--border-glow), 0 4px 24px rgba(99, 102, 241, 0.15);
+  --shadow-glow: 0 0 0 1px var(--border-glow), 0 4px 24px rgba(198, 216, 79, 0.15);
 
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -209,6 +209,24 @@ body {
   background: var(--bg-primary);
 }
 
+.demo-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  border: 1px solid rgba(85, 184, 220, 0.28);
+  border-radius: 8px;
+  background: rgba(85, 184, 220, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.demo-banner strong {
+  color: var(--info);
+  white-space: nowrap;
+}
+
 .page-header {
   padding: 32px 32px 0;
   margin-bottom: 28px;
@@ -337,13 +355,13 @@ body {
 
 .btn-primary {
   background: var(--accent);
-  color: white;
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  color: #17201a;
+  box-shadow: 0 0 20px rgba(198, 216, 79, 0.26);
 }
 
 .btn-primary:hover:not(:disabled) {
   background: var(--accent-hover);
-  box-shadow: 0 0 28px rgba(99, 102, 241, 0.45);
+  box-shadow: 0 0 28px rgba(198, 216, 79, 0.38);
   transform: translateY(-1px);
 }
 

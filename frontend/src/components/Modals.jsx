@@ -42,6 +42,7 @@ export function NewKeyModal({ isOpen, onClose, apiKey, title = 'API Key Generate
   const [copied, setCopied] = useState(false)
 
   if (!isOpen || !apiKey) return null
+  const isDemoKey = apiKey.startsWith('sk_demo_')
 
   const handleCopy = async () => {
     try {
@@ -59,9 +60,11 @@ export function NewKeyModal({ isOpen, onClose, apiKey, title = 'API Key Generate
         <div className="modal-icon" style={{ background: 'rgba(34,197,94,0.12)', color: '#22c55e' }}>
           <CheckCircle size={22} />
         </div>
-        <h3 className="modal-title">{title}</h3>
+        <h3 className="modal-title">{isDemoKey ? 'Demo Key Generated' : title}</h3>
         <p className="modal-body">
-          Copy your API key now — it will <strong>never be shown again</strong> for security reasons.
+          {isDemoKey
+            ? 'This sample key is for preview interactions only and cannot authenticate real API requests.'
+            : <>Copy your API key now — it will <strong>never be shown again</strong> for security reasons.</>}
         </p>
         <div className="new-key-box">
           {apiKey}
@@ -71,7 +74,7 @@ export function NewKeyModal({ isOpen, onClose, apiKey, title = 'API Key Generate
         </div>
         <div className="alert alert-warning" style={{ marginBottom: 0 }}>
           <AlertTriangle size={16} />
-          <span>Store this key securely. It cannot be retrieved once this dialog is closed.</span>
+          <span>{isDemoKey ? 'Demo credentials are stored in this browser only.' : 'Store this key securely. It cannot be retrieved once this dialog is closed.'}</span>
         </div>
         <div className="modal-actions" style={{ marginTop: 20 }}>
           <button className="btn btn-primary" onClick={onClose}>

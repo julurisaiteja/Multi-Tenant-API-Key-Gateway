@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { KeyRound, RotateCcw, Trash2, Plus, ShieldCheck, RefreshCw, Clock, Zap } from 'lucide-react'
 import { ConfirmModal, NewKeyModal, IssueKeyModal } from './Modals'
 import { tenantsApi, keysApi } from '../api'
@@ -36,7 +36,7 @@ export default function KeyList({ tenantId, onRefresh, addToast }) {
   }, [tenantId])
 
   // Load keys when tenantId changes
-  useState(() => { fetchKeys() }, [tenantId])
+  useEffect(() => { fetchKeys() }, [fetchKeys])
 
   // Keep this for external refresh trigger
   if (onRefresh) onRefresh.current = fetchKeys
